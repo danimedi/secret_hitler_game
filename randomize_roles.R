@@ -17,17 +17,7 @@ randomize_roles <- function(names) {
   n <- length(names)
   
   # Number of liberals
-  if (n == 5) {
-    n_liberals <- 3
-  } else if (n == 6 | n == 7) {
-    n_liberals <- 4
-  } else if (n == 8 | n == 9) {
-    n_liberals <- 5
-  } else if (n == 10) {
-    n_liberals <- 6
-  } else {
-    stop("Wrong number of players")
-  }
+  n_liberals<- get_number_of_liberals(length(names))
   
   # Assign roles
   res <- vector("character", length(names))
