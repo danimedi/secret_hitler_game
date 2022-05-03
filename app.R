@@ -1,8 +1,8 @@
 library(shiny)
 library(stringr)
+library(purrr)
 
-source("load_functions.R")
-load_functions(c("get_role", "get_number_of_liberals", "get_ids"))
+walk(list.files("www", full.names = TRUE, pattern = "[.]R$"), source)
 
 ui <- fluidPage(
   textInput("code", "Code of the game"),
