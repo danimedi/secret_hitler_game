@@ -6,7 +6,7 @@ load_functions(c("get_role", "get_number_of_liberals"))
 
 ui <- fluidPage(
   textInput("code", "Code of the game"),
-  numericInput("id", "ID of the player", value = 1, min = 1, max = 10),
+  textInput("id", "ID of the player"),
   actionButton("get_info", "Get role and information"),
   verbatimTextOutput("result")
 )
