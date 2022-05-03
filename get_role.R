@@ -20,11 +20,10 @@
 get_role <- function(code, id) {
   
   # Seed from code
-  seed <- str_sub(code, 1, 3)
+  seed <- decode_seed(code)
   set.seed(seed)
   # Number of players from code
-  n_players <- str_sub(code, -2, -1)
-  n_players <- as.double(n_players)
+  n_players <- decode_n_players(code)
   # Number of liberals
   n_liberals <- get_number_of_liberals(n_players)
   
