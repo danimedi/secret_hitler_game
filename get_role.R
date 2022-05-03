@@ -51,10 +51,10 @@ get_role <- function(code, id) {
   fascist_team <- names(fascist_team) # Only get the names
   hitler <- names(roles[roles == "Hitler"])
   if (role == "Fascist") {
-    res$team_members <- fascist_team
+    res$team_mates <- fascist_team[fascist_team != id]
     res$hitler <- hitler
   } else if (role == "Hitler" & !blinded_hitler) {
-    res$team_members <- fascist_team
+    res$team_mates <- fascist_team[fascist_team != id]
   }
   res
   
