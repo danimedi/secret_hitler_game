@@ -30,7 +30,7 @@ get_role <- function(code, id) {
   
   # Roles
   roles <- vector("character", n_players)
-  names(roles) <- sample(seq_len(n_players))
+  names(roles) <- sample(get_ids(seed = seed, n_players = n_players))
   roles[1:n_liberals] <- "Liberal"
   roles[n_liberals + 1] <- "Hitler"
   roles[roles == ""] <- "Fascist"
@@ -44,7 +44,6 @@ get_role <- function(code, id) {
   
   res <- vector("list")
   # Your role
-  id <- as.character(as.numeric(id))
   role <- roles[id]
   res$role <- unname(role)
   fascist_team <- roles[roles == "Fascist" | roles == "Hitler"]

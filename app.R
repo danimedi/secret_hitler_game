@@ -2,7 +2,7 @@ library(shiny)
 library(stringr)
 
 source("load_functions.R")
-load_functions(c("get_role", "get_number_of_liberals"))
+load_functions(c("get_role", "get_number_of_liberals", "get_ids"))
 
 ui <- fluidPage(
   textInput("code", "Code of the game"),
