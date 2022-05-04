@@ -6,15 +6,7 @@ walk(list.files("www", full.names = TRUE, pattern = "[.]R$"), source)
 
 ui <- fluidPage(
   
-  titlePanel("Secret Hitler"),
-  
-  HTML(paste(
-    "This is a web app designed by DaniMedi. The instructions and other",
-    "details of the app are available on the <a href=''>DaniMedi website</a>,",
-    "and the code is available on",
-    "<a href='https://github.com/danimedi/secret_hitler_game'>GitHub</a>.",
-    "<br><br>"
-  )),
+  titlePanel("Secret Hitler app for the set up"),
   
   tabsetPanel(
     
