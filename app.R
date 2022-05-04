@@ -6,18 +6,28 @@ walk(list.files("www", full.names = TRUE, pattern = "[.]R$"), source)
 
 ui <- fluidPage(
   
-  # Create game
-  numericInput("n_players", "Number of players", value = 5, min = 5, max = 10),
-  actionButton("create_game", "Create game"),
-  verbatimTextOutput("game_code"),
+  titlePanel("Secret Hitler"),
   
-  HTML("<hr>"),
-  
-  # Get roles
-  textInput("code", "Code of the game"),
-  textInput("id", "ID of the player"),
-  actionButton("get_info", "Get role and information"),
-  verbatimTextOutput("result")
+  tabsetPanel(
+    
+    tabPanel(
+      title = "Get roles",
+      
+      numericInput("n_players", "Number of players", value = 5, min = 5, max = 10),
+      actionButton("create_game", "Create game"),
+      verbatimTextOutput("game_code")
+    ),
+    
+    tabPanel(
+      title = "Create game",
+      
+      textInput("code", "Code of the game"),
+      textInput("id", "ID of the player"),
+      actionButton("get_info", "Get role and information"),
+      verbatimTextOutput("result")
+    )
+    
+  )
 )
 
 server <- function(input, output, session) {
